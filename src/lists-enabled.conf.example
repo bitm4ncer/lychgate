@@ -1,0 +1,37 @@
+# Lychgate Block-List Sources
+# Format: NAME|URL|DESCRIPTION
+# Lines starting with # are ignored.
+#
+# After editing: lychgate update [--apply]
+
+# Lychgate curated Apple+Google telemetry list (always on, bundled with repo)
+lychgate-curated|file://LOCAL|~67 hand-picked Apple+Google telemetry endpoints
+
+# Hagezi Light — safe defaults, broad ads+trackers coverage
+hagezi-light|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/light.txt|Hagezi Light (~30k, safe)
+
+# Hagezi Native Apple — Apple telemetry-specific deep dive
+hagezi-native-apple|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.apple.txt|Hagezi Native Apple (~3k Apple-specific)
+
+# =================================================================
+# Optional / commented out — uncomment to enable
+# =================================================================
+
+# Hagezi Multi — recommended general-purpose
+# hagezi-multi|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/multi.txt|Hagezi Multi (~50k)
+
+# Hagezi Pro — more aggressive
+# hagezi-pro|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt|Hagezi Pro (~100k)
+
+# Hagezi TIF — Threat Intelligence Feeds (Phishing+Malware), 500k+ ENTRIES — slow on older Macs
+# hagezi-tif|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/tif.txt|Hagezi TIF (Phishing+Malware)
+
+# Hagezi Native Microsoft
+# hagezi-native-microsoft|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.microsoft.txt|MS telemetry
+
+# Hagezi Native TikTok
+# hagezi-native-tiktok|https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.txt|TikTok
+
+# OISD (alternative source, CDN-aware)
+# oisd-small|https://small.oisd.nl/hosts|OISD Small (~50k)
+# oisd-big|https://big.oisd.nl/hosts|OISD Big (~100k)

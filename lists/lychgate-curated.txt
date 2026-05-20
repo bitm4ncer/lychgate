@@ -1,0 +1,109 @@
+# Lychgate Curated Blocklist — Apple + Google Telemetry
+# These ~67 domains are the core differentiator of Lychgate.
+# Every entry has been hand-picked and verified safe to block
+# without breaking macOS core functionality.
+#
+# Format: one domain per line, # for comments.
+
+# ============================================================
+# APPLE TELEMETRY / TRACKING (non-essential)
+# ============================================================
+
+# Spotlight Web Suggestions (sends your queries to Apple + Microsoft Bing)
+xp.apple.com
+xp-cdn.apple.com
+api-glb.smoot.apple.com
+api2.smoot.apple.com
+api-glb-aluminum.smoot.apple.com
+bingapi.apple.com
+
+# Apple Advertising (iAd)
+iadsdk.apple.com
+iad.apple.com
+ca.iadsdk.apple.com
+iadworkbench.apple.com
+iadsdk-cdn.apple.com
+
+# Apple Metrics / Analytics
+metrics.apple.com
+metrics.icloud.com
+analytics.apple.com
+analyticsd.apple.com
+xp.itunes-apple.com.akadns.net
+supportmetrics.apple.com
+diagassets.apple.com
+diagnostics.apple.com
+diags.apple.com
+humb.apple.com
+
+# Apple Location-Services tracking
+gsp10-ssl.ls.apple.com
+gsp-ssl.ls.apple.com
+gsp64-ssl.ls.apple.com
+ls.apple.com
+gsp10.ls.apple.com
+gsp.ls.apple.com
+
+# iTunes tracking
+bag.itunes.apple.com
+
+# Weather app telemetry
+weather-data.apple.com
+weather-analytics-events.weather.apple.com
+
+# Siri telemetry (even when Siri disabled)
+guzzoni.apple.com
+guzzoni-apple-com.v.aaplimg.com
+
+# News app tracking
+news-edge.apple.com
+news-events.apple.com
+news-client-mediation.apple.com
+
+# ============================================================
+# GOOGLE TRACKING (in macOS apps, embedded in websites)
+# ============================================================
+
+# Google Analytics
+google-analytics.com
+www.google-analytics.com
+ssl.google-analytics.com
+ssl-google-analytics.l.google.com
+
+# Google Tag Manager / Services
+googletagmanager.com
+www.googletagmanager.com
+googletagservices.com
+
+# Google Ads
+googleadservices.com
+www.googleadservices.com
+googlesyndication.com
+adservice.google.com
+adservice.google.de
+pagead2.googlesyndication.com
+pagead.l.google.com
+
+# DoubleClick (Google's Ad infrastructure)
+doubleclick.net
+stats.g.doubleclick.net
+ad.doubleclick.net
+adclick.g.doubleclick.net
+ad-emea.doubleclick.net
+
+# Google Firebase / Crashlytics
+crashlytics.com
+fabric.crashlytics.com
+e.crashlytics.com
+firebase-settings.crashlytics.com
+firebaseinstallations.googleapis.com
+firebase-analytics.appspot.com
+firebaseremoteconfig.googleapis.com
+crashlyticsreports-pa.googleapis.com
+
+# Google APIs telemetry
+clientservices.googleapis.com
+clients2.google.com
+clients3.google.com
+clients4.google.com
+update.googleapis.com

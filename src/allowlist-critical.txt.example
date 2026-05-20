@@ -1,0 +1,84 @@
+# Lychgate Critical Allowlist — domains that should NEVER be blocked
+#
+# Format:
+#   exact-domain.com         — exact match
+#   *.exact-domain.com       — wildcard matching any subdomain
+#
+# SAFETY: wildcards with fewer than 2 dots in suffix are rejected
+# (e.g. *.com is refused because it would void the entire block).
+#
+# Entries in this list ALWAYS win over any blocklist.
+
+# ============================================================
+# Apple — system-critical, do not block
+# ============================================================
+# Code signature validation (blocking this slows every signed app launch)
+ocsp.apple.com
+ocsp2.apple.com
+crl.apple.com
+crl3.digicert.com
+ocsp.digicert.com
+
+# Captive portal detection (WLAN reachability)
+captive.apple.com
+www.apple.com
+
+# Software updates
+swcdn.apple.com
+swdist.apple.com
+swdownload.apple.com
+mesu.apple.com
+gdmf.apple.com
+gg.apple.com
+
+# App Store
+itunes.apple.com
+buy.itunes.apple.com
+init-buy.itunes.apple.com
+valid.apple.com
+gsra.apple.com
+gsa.apple.com
+*.mzstatic.com
+
+# Time sync
+time.apple.com
+time-ios.apple.com
+time-macos.apple.com
+
+# iCloud (if you use it)
+gateway.icloud.com
+api.apple-cloudkit.com
+
+# ============================================================
+# Common services you probably want — uncomment / edit as needed
+# ============================================================
+
+# Anthropic / Claude
+api.anthropic.com
+claude.ai
+console.anthropic.com
+
+# pCloud
+*.pcloud.com
+
+# Mullvad VPN
+*.mullvad.net
+
+# GitHub
+github.com
+api.github.com
+raw.githubusercontent.com
+objects.githubusercontent.com
+codeload.github.com
+
+# VSCodium
+update.code.visualstudio.com
+open-vsx.org
+
+# Lychgate self-update (DON'T BLOCK)
+github.com
+raw.githubusercontent.com
+
+# DNS-over-HTTPS endpoints (if you use Quad9, Cloudflare etc.)
+# dns.quad9.net
+# dns.cloudflare.com

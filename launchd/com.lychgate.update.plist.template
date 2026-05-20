@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Lychgate Auto-Update LaunchDaemon template
+
+  ⚠️  SECURITY NOTICE — Read before installing.
+
+  This LaunchDaemon runs the update script as root weekly. To avoid
+  the LPE class of bug, the script MUST live in a non-user-writable
+  location (e.g. /usr/local/sbin/lychgate-update-daemon.sh) with
+  ownership root:wheel and mode 0755 — NOT in the user's home repo.
+
+  Setup procedure:
+    1. Copy src/update-daemon.sh to /usr/local/sbin/ (manually, via sudo)
+    2. sudo chown root:wheel /usr/local/sbin/lychgate-update-daemon.sh
+    3. sudo chmod 0755 /usr/local/sbin/lychgate-update-daemon.sh
+    4. Replace LYCHGATE_HOME_PLACEHOLDER below with the absolute path
+       of your installed repo (the daemon script needs to find the
+       config + lists + compiler)
+    5. Replace USER_PLACEHOLDER with your username (so lists files end
+       up with correct ownership)
+    6. sudo cp this-file.plist /Library/LaunchDaemons/com.lychgate.update.plist
+    7. sudo chown root:wheel /Library/LaunchDaemons/com.lychgate.update.plist
+    8. sudo chmod 0644 /Library/LaunchDaemons/com.lychgate.update.plist
+    9. sudo launchctl bootstrap system /Library/LaunchDaemons/com.lychgate.update.plist
+
+  To remove:
+    sudo launchctl bootout system /Library/LaunchDaemons/com.lychgate.update.plist
+    sudo rm /Library/LaunchDaemons/com.lychgate.update.plist
+    sudo rm /usr/local/sbin/lychgate-update-daemon.sh
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.lychgate.update</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/usr/local/sbin/lychgate-update-daemon.sh</string>
+        <string>LYCHGATE_HOME_PLACEHOLDER</string>
+        <string>USER_PLACEHOLDER</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/var/log/lychgate-update.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/var/log/lychgate-update.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
